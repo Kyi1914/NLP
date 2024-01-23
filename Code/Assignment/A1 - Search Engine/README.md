@@ -13,3 +13,11 @@ Objectives:
 
 ## Credit to the dataset sourch that I used in this project
 The "rural.txt" dataset used in this project is part of the Natural Language Toolkit (NLTK) datasets, which is available at https://www.nltk.org/nltk_data/. The dataset is provided by NLTK for educational and research purposes. We acknowledge and appreciate the contributions of the NLTK project to natural language processing research and education.
+
+## Report
+ Model             | Window Size | Training Loss | Training Time | Syntactic Accuracy | Semantic Accuracy |
+|------------------|-------------|---------------|---------------|--------------------|------------|
+| Skipgram         | 2           | 30.60         | 31 min 35 sec | 0.00%              | 0.00%     |
+| Skipgram (NEG)   | 2           | 10.55         | 31 min 51 sec | 0.00%              | 0.00%     |
+| Glove            | 2           | 6.93          | 4 min 12 sec  | 0.00%              | 0.00%     |
+| Glove (Gensim)   | -           | -             | -             | 55.45%             | 93.87%    |
