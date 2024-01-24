@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Engine Website</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter your search query...">
+            <button onclick="search()">Search</button>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Similarity Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Similarity Search</h1>
+        <form action="/" method="POST">
+            <label for="query">Enter a word:</label>
+            <input type="text" id="query" name="query" value = "{{ query }}" placeholder="Type a word..." required>
+            <button type="submit">Search</button>
+            <!-- pattern="[a-zA-Z]+" -->
+        </form>
+
+        {% if query %}
+            <h2>{{ heading }}</h2>
+            <!-- create the result with the list item -->
+            <ul>
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
