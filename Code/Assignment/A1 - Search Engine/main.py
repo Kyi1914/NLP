@@ -70,7 +70,21 @@ class SkipgramNeg (nn.Module):
         
         loss = self.logsigmoid(uovc) + self.logsigmoid(ukvc_sum)
         
-        return -torch.mean(loss)        
+        return -torch.mean(loss)
+    
+    def get_embed (self,word):
+        try:
+            index = word2index[word]
+        except:
+            index = word2index['<UNK>']
+        
+        word = torch.LongTensor([word2index[word]])
+        
+        embed_c = self.embedding_center(word)
+        embed_o = self.embedding_outside(word)
+        word_embed = (embed_c + embed_o) / 2
+        
+        return word_embed
         
 
 # GloVe Model
@@ -98,3 +112,13 @@ class Glove(nn.Module):
         loss = weighting * torch.pow(inner_product + center_bias + target_bias - cooc, 2)
         
         return torch.sum(loss)
+    
+    # let's write a function to get embedding given a word
+    def get_embed(self,word):
+        id_tensor  = torch.LongTensor([word2index[word]])
+        v_embed    = self.center_embedding(id_tensor)
+        u_embed    = self.outside_embedding(id_tensor)
+        word_embed = (v_embed + u_embed) / 2
+        # x, y       = word_embed[0][0].item(), word_embed[0][1].item()
+        
+        return word_embed

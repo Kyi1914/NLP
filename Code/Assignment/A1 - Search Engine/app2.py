@@ -31,14 +31,26 @@ def index():
         query_words = query.split()
 
         results = []  # to store most similar words
+        vectors = [] # to store all input vectors
+        result_vector = [] # to store final result
         for word in query_words:
             # Check if the word is in the vocabulary
+            
             if word in gensim:
-                search = gensim.most_similar(word)
-                for i in range(min(10, len(search))):
-                    results.append(search[i][0])
+                vectors.append(gensim.get_vector(word))
             else:
                 results.append(f'Word "{word}" not found in vocabulary.')
+
+        for i in range(len(vectors)):
+            if i == 0:
+                result_vector = vectors[i]
+                print(result_vector)
+            else:
+                result_vector = result_vector + vectors[i] # combine the embeddings of all input words
+        print(result_vector)
+        search = gensim.most_similar(result_vector)
+        for i in range(len(search)):
+            results.append(search[i][0])
 
         # Generate a simple word cloud
         wordcloud = WordCloud(width=800, height=400, background_color='white').generate(' '.join(results))
