@@ -25,4 +25,8 @@ The "rural.txt" dataset used in this project is part of the Natural Language Too
 | Glove            | 2           | 6.93          | 4 min 12 sec  | 0.00%              | 0.00%     |
 | Glove (Gensim)   | -           | -             | -             | 55.45%             | 93.87%    |
 
-(3)
+(3)The Similarity Metrics (Correlation between my models and human judgement)
+
+Model             | Skipgram | NEG | GloVe | GloVe (gensim) | Y-true |
+|----------------- |---------|-----|-------|----------------|--------|
+| Spearmanr Result | 0.0939  | 0.0844 | 0.0845  | -0.6035   |   |
