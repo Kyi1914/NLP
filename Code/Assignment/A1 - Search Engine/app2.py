@@ -8,10 +8,14 @@ matplotlib.use('Agg')  # Add this line before importing pyplot
 import matplotlib.pyplot as plt
 
 # Load the model
-model_save_path = './model/a1-gensim.pkl'
-gensim = pickle.load(open(model_save_path, 'rb'))
+model_skipgram    = './model/A1-Skipgram.pt'
+model_NegSampling = './model/A1-NegSampling.pt'
+model_glove       = './model/A1-Glove.pt'
+model_gensim      = './model/a1-gensim.pkl'
 
-app = Flask(__name__, static_url_path='/static')
+gensim = pickle.load(open(model_gensim, 'rb'))
+
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -33,9 +37,10 @@ def index():
         results = []  # to store most similar words
         vectors = [] # to store all input vectors
         result_vector = [] # to store final result
+        
         for word in query_words:
-            # Check if the word is in the vocabulary
             
+            # Check if the word is in the vocabulary
             if word in gensim:
                 vectors.append(gensim.get_vector(word))
             else:
@@ -48,7 +53,9 @@ def index():
             else:
                 result_vector = result_vector + vectors[i] # combine the embeddings of all input words
         print(result_vector)
+        
         search = gensim.most_similar(result_vector)
+        
         for i in range(len(search)):
             results.append(search[i][0])
 
@@ -61,7 +68,7 @@ def index():
         plt.savefig('./static/wordcloud.png')
 
         heading = "Most similar words are:"  # to load only after submitting
-        return render_template('index2.html', query=query, heading=heading, results=results)
+        return render_template('index.html', query=query, heading=heading, results=results)
 
 port_number = 8000
 
