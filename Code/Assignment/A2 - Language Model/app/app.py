@@ -10,7 +10,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
 # Import training data
-Data = pickle.load(open('./model/Data.pkl', 'rb'))
+Data = pickle.load(open('./app/model/Data.pkl', 'rb'))
 vocab_size   = Data['vocab_size']
 emb_dim      = Data['emb_dim']
 hid_dim      = Data['hid_dim']
@@ -22,13 +22,14 @@ vocab        = Data['vocab']
 
 # Import the model
 model = LSTMLanguageModel(vocab_size, emb_dim, hid_dim, num_layers, dropout_rate)
-model.load_state_dict(torch.load('./model/best-val-lstm_lm.pt', map_location = torch.device(device)))
+model.load_state_dict(torch.load('./app/model/fairy-tale-lstm.pt', map_location = torch.device(device)))
 model.eval()
 
 # web Flask
 app = Flask(__name__)
 
-@app.route('/', method = ['GET', 'POST'])
+# @app.route('/', method = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 
 def index():
     # return the HOME page
