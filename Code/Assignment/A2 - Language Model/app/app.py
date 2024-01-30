@@ -38,7 +38,8 @@ def index():
     
     if request.method == 'POST':
         # get the user input
-        prompt = request.form.get('prompt')
+        prompt = request.form.get('query')
+        # print(prompt)
         seq_len = 30
         temperature = 0.8
         seed = 0

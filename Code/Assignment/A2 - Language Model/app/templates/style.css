@@ -1,0 +1,62 @@
+/* styles.css */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.row {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #007bff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 300px;
+    padding: 8px;
+    margin: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Custom styles for the result */
+.row-result {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Add this style for details explanation */
+.details-explanation {
+    text-align: center;
+    padding-bottom: 50px;
+}
