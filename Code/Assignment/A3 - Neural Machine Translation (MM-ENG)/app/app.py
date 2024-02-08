@@ -25,7 +25,7 @@ app = Flask(__name__)
 def index():
     # return the HOME page
     if request.method == 'GET':
-        return render_template ('index.html', prompt = '')
+        return render_template ('index2.html', prompt = '')
     
     if request.method == 'POST':
         # get the user input
@@ -35,7 +35,7 @@ def index():
         generation.remove('<eos>')
         # print(generation)
         sentence = ' '.join(generation)
-        return render_template('index.html', query = prompt, sentence = sentence)
+        return render_template('index2.html', query = prompt, sentence = sentence)
     
 port_number = 8000
 
