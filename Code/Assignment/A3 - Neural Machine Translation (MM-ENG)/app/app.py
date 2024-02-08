@@ -11,12 +11,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
 
-# Instantiate the model << change the model later>>
-# model = initialize_model('multiplicativeAttention')
-# Instantiate the model
 model = utils.define_model()
-save_path = f'/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/models/additiveAttention.pt'
+save_path = f'./app/models/additiveAttention.pt'
 model.load_state_dict(torch.load(save_path, map_location=torch.device('cpu')))
+# print("work")
 
 # web Flask
 app = Flask(__name__)
@@ -27,16 +25,17 @@ app = Flask(__name__)
 def index():
     # return the HOME page
     if request.method == 'GET':
-        return render_template ('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/template/index.html', prompt = '')
+        return render_template ('index.html', prompt = '')
     
     if request.method == 'POST':
         # get the user input
         prompt = request.form.get('query')
         # print(prompt)
-        generation, _ = utils.greedy_decode(model, prompt, max_len=50, device='cpu')
-        print(generation)
+        generation = utils.greedy_decode(model, prompt, max_len=50, device='cpu')
+        generation.remove('<eos>')
+        # print(generation)
         sentence = ' '.join(generation)
-        return render_template('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/template/index.html', prompt = prompt, sentence = sentence)
+        return render_template('index.html', query = prompt, sentence = sentence)
     
 port_number = 8000
 
