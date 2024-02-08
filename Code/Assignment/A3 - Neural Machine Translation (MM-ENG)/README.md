@@ -161,3 +161,21 @@ This is the plot according to the losses and PPL for training and validation.
 - According to the computational efficiency, the multiplicative attention is the fastest while additive takes more than 3 times of the other models.
 
 ### Task 4: Web Application Development
+Web Application serve as an interface between the model and users.
+- Take the input from the user as a text from the text box.
+- The greedy_decode function will process user input with the model.
+- Show the result as a text on the web page again.
+
+greedy_decode function
+- The greedy_decode function takes a source sequence src and generates the corresponding target sequence using a greedy decoding strategy.
+- Take the user input
+- Convert the source sequence to a tensor using the text_transform for the source language.
+- Unsqueeze it to add a batch dimension and set the model to evaluation mode.
+- Create a source mask for the source sequence.
+- Pass the source sequence through the encoder.
+- Initialize the target sequence with the start-of-sequence (<sos>) token
+- Repeat until max sequence length or '<`eos`>' token.
+- Convert the target indexes to tokens using the reverse mapping for the target language.
+- Return the generated target tokens, excluding the start-of-sequence (<sos>) token.
+- web interface receive generated target token and the remove <`eos`> token.
+- return to the website to show the result to the user.
