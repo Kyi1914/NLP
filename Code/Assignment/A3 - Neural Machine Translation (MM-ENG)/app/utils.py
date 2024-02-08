@@ -17,7 +17,7 @@ TRG_LANGUAGE = 'my'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # load the vocab
-vocab_transform = pickle.load(open('./data/vocab.pkl', 'rb'))
+vocab_transform = pickle.load(open('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/data/vocab.pkl', 'rb'))
 
 # MMR tokenization part
 
@@ -47,8 +47,8 @@ import pickle
 
 sys.setrecursionlimit(10**6)
 
-uni_dict_bin = './app/data/unigram-word.bin'
-bi_dict_bin = './app/data/bigram-word.bin'                
+uni_dict_bin = '/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/data/unigram-word.bin'
+bi_dict_bin = '/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/data/bigram-word.bin'                
 
 def read_dict (fileDICT):
     try:

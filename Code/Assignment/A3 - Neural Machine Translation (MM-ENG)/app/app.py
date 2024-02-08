@@ -1,10 +1,10 @@
 # Import libraries
 from flask import Flask, render_template, request, jsonify
-from utils import LSTMLanguageModel, generate
+# from utils import LSTMLanguageModel, generate
 import pickle
 import torch
 import torch.nn.functional as F
-from utils import *
+import utils
 
 # cpu or gpu
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -14,8 +14,8 @@ print(device)
 # Instantiate the model << change the model later>>
 # model = initialize_model('multiplicativeAttention')
 # Instantiate the model
-model = define_model()
-save_path = f'./models/addmodel.pt'
+model = utils.define_model()
+save_path = f'/Users/kyithinnu/GitHub/NLP/Code/Assignment/A3 - Neural Machine Translation (MM-ENG)/app/models/additiveAttention.pt'
 model.load_state_dict(torch.load(save_path, map_location=torch.device('cpu')))
 
 # web Flask
@@ -33,7 +33,7 @@ def index():
         # get the user input
         prompt = request.form.get('query')
         # print(prompt)
-        generation, _ = greedy_decode(model, prompt, max_len=50, device='cpu')
+        generation, _ = utils.greedy_decode(model, prompt, max_len=50, device='cpu')
         print(generation)
         sentence = ' '.join(generation)
         return render_template('index.html', prompt = prompt, sentence = sentence)
