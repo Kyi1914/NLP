@@ -13,8 +13,11 @@ import matplotlib.pyplot as plt
 SRC_LANGUAGE = 'en'
 TRG_LANGUAGE = 'my'
 
+# cpu or gpu
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 # load the vocab
-vocab_transform = pickle.load(open('./app/data/vocab.pkl', 'rb'))
+vocab_transform = pickle.load(open('./data/vocab.pkl', 'rb'))
 
 # MMR tokenization part
 
@@ -78,11 +81,9 @@ class ProbDist(dict):
             return self[key]/self.N
         else:
             return self.unknownprob(key, self.N)
-        
 
 P_unigram = ProbDist(uni_dict_bin, True)
 P_bigram = ProbDist(bi_dict_bin, False)
-
 
 def conditionalProb(word_curr, word_prev):
     ### Conditional probability of current word given the previous word.
@@ -398,6 +399,151 @@ class MultiHeadMultiplicativeAttentionLayer(nn.Module):
         # x = [batch_size, query len, hid dim]
         
         return x, attention
+    
+# ----
+class MultiHeadGeneralAttentionLayer(nn.Module):
+    def __init__(self, hid_dim, n_heads, dropout, device):
+        super().__init__()
+        assert hid_dim % n_heads == 0
+        self.hid_dim  = hid_dim
+        self.n_heads  = n_heads
+        self.head_dim = hid_dim // n_heads
+        
+        self.fc_q     = nn.Linear(hid_dim, hid_dim)
+        self.fc_k     = nn.Linear(hid_dim, hid_dim)
+        self.fc_v     = nn.Linear(hid_dim, hid_dim)
+        
+        self.fc_o     = nn.Linear(hid_dim, hid_dim)
+        
+        self.dropout  = nn.Dropout(dropout)
+        
+        self.scale    = torch.sqrt(torch.FloatTensor([self.head_dim])).to(device)
+                
+    def forward(self, query, key, value, mask = None):
+        # src, src, src, src_mask
+        # query = [batch size, query len, hid dim]
+        # key   = [batch size, key len, hid dim]
+        # value = [batch size, value len, hid dim]
+        
+        batch_size = query.shape[0]
+        
+        Q = self.fc_q(query)
+        K = self.fc_k(key)
+        V = self.fc_v(value)
+        # Q=K=V: [batch_size, src len, hid_dim]
+        
+        Q = Q.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        K = K.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        V = V.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        # Q = [batch_size, n heads, query len, head_dim]
+        
+        energy = torch.matmul(Q, K.permute(0, 1, 3, 2)) / self.scale 
+        # Q = [batch_size, n heads, query len, head_dim] @ K = [batch_size, n heads, head_dim, key len]
+        # energy = [batch_size, n heads, query len, key len]
+        
+        # for making attention to padding to 0
+        if mask is not None:
+            energy = energy.masked_fill(mask == 0, -1e10)
+            
+        attention = torch.softmax(energy, dim = -1)
+        # attention = [batch_size, n heads, query len, key len]
+        
+        x = torch.matmul(self.dropout(attention), V)
+        # [batch_size, n heads, query len, key len] @ [batch_size, n heads, value len, head_dim]
+        # x = [batch_size, n heads, query len, head dim]
+        
+        x = x.permute(0, 2, 1, 3).contiguous()  #we can perform .view
+        # x = [batch_size, query len, n heads, head dim]
+        
+        x = x.view(batch_size, -1, self.hid_dim)
+        # x = [batch_size, query len, hid dim]
+        
+        x = self.fc_o(x)
+        # x = [batch_size, query len, hid dim]
+        
+        return x, attention
+    
+# ----
+class MultiHeadAdditiveAttentionLayer(nn.Module):
+    
+    def __init__(self, hid_dim, n_heads, dropout, device):
+        super().__init__()
+        assert hid_dim % n_heads == 0
+        self.hid_dim  = hid_dim
+        self.n_heads  = n_heads
+        self.head_dim = hid_dim // n_heads
+        
+        # input >> Q, K, V
+        self.fc_q     = nn.Linear(hid_dim, hid_dim)
+        self.fc_k     = nn.Linear(hid_dim, hid_dim)
+        self.fc_v     = nn.Linear(hid_dim, hid_dim)
+        
+        # for additive v, U, W
+        self.vv = nn.Linear(self.head_dim, 1, bias = False)
+        self.W = nn.Linear(self.head_dim, self.head_dim) # for decoder input_ (W2)
+        self.U = nn.Linear(self.head_dim, self.head_dim)  # for encoder_outputs (W1)
+        
+        self.fc_o     = nn.Linear(hid_dim, hid_dim)
+        
+        self.dropout  = nn.Dropout(dropout)
+        
+        self.scale    = torch.sqrt(torch.FloatTensor([self.head_dim])).to(device)
+    
+    def forward(self, query, key, value, mask = None):
+        
+        # src, src, src, src_mask
+        # query = [batch size, query len, hid dim]
+        # key   = [batch size, key len, hid dim]
+        # value = [batch size, value len, hid dim]
+        
+        batch_size = query.shape[0]
+        query_len  = query.shape[1]
+        key_len    = key.shape[1]
+        
+        # linear transform for the input
+        Q = self.fc_q(query)
+        K = self.fc_k(key)
+        V = self.fc_v(value)
+        # Q=K=V: [batch_size, src len, hid_dim]
+        
+        # update the size for matrix multiplication
+        Q = Q.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        K = K.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        V = V.view(batch_size, -1, self.n_heads, self.head_dim).permute(0, 2, 1, 3)
+        # Q = [batch_size, n heads, query len, head_dim]
+    
+        Q = Q.view(batch_size, self.n_heads, query_len, 1, self.head_dim)
+        K = K.view(batch_size, self.n_heads, 1, key_len, self.head_dim)
+        
+        # calculate the energy : for additive
+        energy = (self.vv(torch.tanh(self.W(Q) + self.U(K))) / self.scale).squeeze(4)
+        # Q = [batch_size, n heads, query len, head_dim] @ K = [batch_size, n heads, head_dim, key len]
+        # energy = [batch_size, n heads, query len, key len, 1] >> squeeze(4)
+        # energy = [batch_size, n heads, query len, key len]
+        
+        # for making attention to padding to 0
+        if mask is not None:
+            energy = energy.masked_fill(mask == 0, -1e10)
+            
+        attention = torch.softmax(energy, dim = -1)
+        # attention = [batch_size, n heads, query len, key len]
+        
+        x = torch.matmul(self.dropout(attention), V)
+        # [batch_size, n heads, query len, key len] @ [batch_size, n heads, value len, head_dim]
+        # x = [batch_size, n heads, query len, head dim]
+        
+        x = x.permute(0, 2, 1, 3).contiguous()  #we can perform .view
+        # x = [batch_size, query len, n heads, head dim]
+        
+        x = x.view(batch_size, -1, self.hid_dim)
+        # x = [batch_size, query len, hid dim]
+        
+        x = self.fc_o(x)
+        # x = [batch_size, query len, hid dim]
+        
+        return x, attention
+
+######
 
 # ----------------- Positionwise Feed Forward Layer ---------------------
 class PositionwiseFeedforwardLayer(nn.Module):
@@ -478,48 +624,51 @@ def initialize_weights(m):
         nn.init.xavier_uniform_(m.weight.data)
 
 # initialize parameters
-input_dim   = len(vocab_transform[SRC_LANGUAGE])
-output_dim  = len(vocab_transform[TRG_LANGUAGE])
-hid_dim     = 256
-enc_layers  = 3
-dec_layers  = 3
-enc_heads   = 8
-dec_heads   = 8
-enc_pf_dim  = 512
-dec_pf_dim  = 512
-enc_dropout = 0.1
-dec_dropout = 0.1
+def define_model():
+    input_dim   = len(vocab_transform[SRC_LANGUAGE])
+    output_dim  = len(vocab_transform[TRG_LANGUAGE])
+    hid_dim     = 256
+    enc_layers  = 3
+    dec_layers  = 3
+    enc_heads   = 8
+    dec_heads   = 8
+    enc_pf_dim  = 512
+    dec_pf_dim  = 512
+    enc_dropout = 0.1
+    dec_dropout = 0.1
 
-SRC_PAD_IDX = PAD_IDX
-TRG_PAD_IDX = PAD_IDX
+    SRC_PAD_IDX = PAD_IDX
+    TRG_PAD_IDX = PAD_IDX
 
-# Initialize Encoder and Decoder with different attention mechanisms
-enc_general_attention = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device,attention = MultiHeadGeneralAttentionLayer)
-dec_general_attention = Decoder(output_dim, 
-                                hid_dim, 
-                                dec_layers, 
-                                dec_heads, 
-                                dec_pf_dim, 
-                                enc_dropout, 
-                                device,
-                                attention = MultiHeadGeneralAttentionLayer)
+    # Initialize Encoder and Decoder with different attention mechanisms
+    enc_general_attention = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device,attention = MultiHeadGeneralAttentionLayer)
+    dec_general_attention = Decoder(output_dim, 
+                                    hid_dim, 
+                                    dec_layers, 
+                                    dec_heads, 
+                                    dec_pf_dim, 
+                                    enc_dropout, 
+                                    device,
+                                    attention = MultiHeadGeneralAttentionLayer)
 
-enc_multiplicative_attention = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device, attention = MultiHeadMultiplicativeAttentionLayer)
-dec_multiplicative_attention = Decoder(output_dim, hid_dim, dec_layers, dec_heads, dec_pf_dim, dec_dropout, device, attention = MultiHeadMultiplicativeAttentionLayer)
+    enc_multiplicative_attention = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device, attention = MultiHeadMultiplicativeAttentionLayer)
+    dec_multiplicative_attention = Decoder(output_dim, hid_dim, dec_layers, dec_heads, dec_pf_dim, dec_dropout, device, attention = MultiHeadMultiplicativeAttentionLayer)
 
-enc_additive_attention       = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device, attention = MultiHeadAdditiveAttentionLayer)
-dec_additive_attention       = Decoder(output_dim, hid_dim, dec_layers, dec_heads, dec_pf_dim, dec_dropout, device, attention = MultiHeadAdditiveAttentionLayer)
+    enc_additive_attention       = Encoder(input_dim, hid_dim, enc_layers, enc_heads, enc_pf_dim, enc_dropout, device, attention = MultiHeadAdditiveAttentionLayer)
+    dec_additive_attention       = Decoder(output_dim, hid_dim, dec_layers, dec_heads, dec_pf_dim, dec_dropout, device, attention = MultiHeadAdditiveAttentionLayer)
 
-# Create models with different attentions
-# Optionally, apply weight initialization
-model_general_attention      = Seq2SeqTransformer(enc_general_attention, dec_general_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
-model_general_attention.apply(initialize_weights)
+    # Create models with different attentions
+    # Optionally, apply weight initialization
+    model_general_attention      = Seq2SeqTransformer(enc_general_attention, dec_general_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
+    model_general_attention.apply(initialize_weights)
 
-model_additive_attention     = Seq2SeqTransformer(enc_additive_attention, dec_additive_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
-model_additive_attention.apply(initialize_weights)
+    model_additive_attention     = Seq2SeqTransformer(enc_additive_attention, dec_additive_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
+    model_additive_attention.apply(initialize_weights)
 
-model_multiplicative_attention = Seq2SeqTransformer(enc_multiplicative_attention, dec_multiplicative_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
-model_multiplicative_attention.apply(initialize_weights)
+    model_multiplicative_attention = Seq2SeqTransformer(enc_multiplicative_attention, dec_multiplicative_attention, SRC_PAD_IDX, TRG_PAD_IDX, device).to(device)
+    model_multiplicative_attention.apply(initialize_weights)
+    
+    return model_additive_attention
 
 # ------------------------ inference testing --------------------------
 def greedy_decode(model, src, max_len, device):

@@ -10,8 +10,13 @@ from utils import *
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
+
 # Instantiate the model << change the model later>>
 # model = initialize_model('multiplicativeAttention')
+# Instantiate the model
+model = define_model()
+save_path = f'./models/addmodel.pt'
+model.load_state_dict(torch.load(save_path, map_location=torch.device('cpu')))
 
 # web Flask
 app = Flask(__name__)
