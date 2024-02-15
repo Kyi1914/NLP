@@ -66,20 +66,8 @@ def unique_skills(x):
 
 from collections import defaultdict
 
-
-# def get_info(text):
-#     doc = nlp(text)
-#     info = defaultdict(list)
-#     for ent in doc.ents:
-#         if ent.label_[:5] == "SKILL":
-#             info["SKILL"].append(ent.text)
-#         elif ent.label_[:5] == "EMAIL":
-#             info["EMAIL"].append(ent.text)
-#         else:
-#             info[ent.label_].append(ent.text)
-#     return info
-
 # ----------------------------------------------
+
 from PyPDF2 import PdfReader
 
 def readPDF(path):
@@ -90,11 +78,12 @@ def readPDF(path):
     text = preprocessing(text)
     doc = nlp(text)
 
-    person    = []
+    # person    = []
     email     = []
     phone     = []
     skill     = []
     education = []
+    organization = []
 
     for ent in doc.ents:
         if ent.label_ == 'PHONE':
@@ -105,13 +94,16 @@ def readPDF(path):
             skill.append(ent.text)
         if ent.label_ == 'EDUCATION':
             education.append(ent.text)
+        if ent.label_ == 'ORG':
+            organization.append(ent.text)
     
     phone     = set(phone)  
     email     = set(email)     
     skill     = set(skill)
     education = set(education)
+    organization = set(organization)
     
-    info = {'phone': phone, 'email': email, 'skills':skill,'education':education}
+    info = {'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
     df = pd.DataFrame.from_dict(info, orient='index') # for dataframe
     
     return info, df

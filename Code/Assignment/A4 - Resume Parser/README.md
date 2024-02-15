@@ -15,8 +15,13 @@ In this assignment, I will create a resume parser.
 Users will upload their resume in PDF format, and the system will output the contact information, a list of unique skills, education details and orgnization in order.
 
 ## Task 1: Implementation Foundation
-I extend the resume parser code based on the spaCy class using the Resume Parsing.ipynb and implement additional features or improvements inspired by spaCy’s capabilities in natural language
-processing.
+I extend the resume parser code based on the spaCy class using the Resume Parsing.ipynb.  
+Implement additional features or improvements inspired by spaCy’s capabilities in natural language
+processing:
+- Extract Name
+- Extract Email with R
+- Extract Phone Number
+- 
 
 ## Task 2: Resume Parsing Features - Web Application Development
 I develop a simple web application that showcases the capabilities of extraction. 
