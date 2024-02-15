@@ -28,9 +28,14 @@ processing:
 ## Task 2: Resume Parsing Features - Web Application Development
 I develop a simple web application that showcases the capabilities of extraction. 
 ![Alt Text](./app/image/ui1.png)  
+
 1. User can upload a PDF.  
 ![Alt Text](./app/image/ui2.png)  
+
+
 2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded file.  
 ![Alt Text](./app/image/ui3.png)  
+
+
 3. The system will support to download the csv file version including the extracted information provided from the system.  
 ![Alt Text](./app/image/ui4.png)  
