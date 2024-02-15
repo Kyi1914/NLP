@@ -14,9 +14,16 @@ ruler.from_disk(entity_path)
 # define pattern
 patterns = [
     {"label": "PHONE", "pattern": [{"TEXT": {"REGEX": "((\d){7})"}}]},
-    {"label": "EMAIL", "pattern": [{"TEXT": {"REGEX": "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\\b"}}]}
+    {"label": "EMAIL", "pattern": [{"TEXT": {"REGEX": "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\\b"}}]},
+    {"label": "EDUCATION", "pattern": [{"LOWER": {"IN": ["bsc", "bachelor", "bachelor's", "b.a", "b.s", "b.c.sc","be","b.engineering"]}}, {"IS_ALPHA": True, "OP": "*"}]},
+    {"label": "EDUCATION", "pattern": [{"LOWER": {"IN": ["msc", "master", "master's", "m.a", "m.s", "mba","ms.c.","me","m.enginnering"]}}, {"IS_ALPHA": True, "OP": "*"}]},
+    {"label": "EDUCATION", "pattern": [{"LOWER": {"IN": ["phd", "ph.d", "doctor", "doctorate","ph.d.", "doctoral"]}}, {"IS_ALPHA": True, "OP": "*"}]},
+    {"label": "EDUCATION", "pattern": [{"LOWER": {"IN": ["post-doctoral", "post-doc", "postdoctoral", "postdoc"]}}, {"IS_ALPHA": True, "OP": "*"}]},
+    {"label": "EDUCATION", "pattern": [{"LOWER": {"IN": ["dip", "diploma"]}}, {"IS_ALPHA": True, "OP": "*"}]},
+    {"label": "CERTIFICATE", "pattern": [{"LOWER": {"IN": ["certificate", "certification", "certificated", "certify"]}}, {"IS_ALPHA": True, "OP": "*"}]}
+    # {"label": "CERTIFICATE", "pattern": [{"LOWER": {"IN": ["dip", "diploma"]}}, {"IS_ALPHA": True, "OP": "*"}]},
 ]
-# add pattern to ruler
+
 ruler.add_patterns(patterns)
 
 # -----------------------------------------------------------------------------
@@ -68,6 +75,7 @@ from collections import defaultdict
 
 # ----------------------------------------------
 
+# func to read pdf and proceed resume parser
 from PyPDF2 import PdfReader
 
 def readPDF(path):
@@ -78,7 +86,7 @@ def readPDF(path):
     text = preprocessing(text)
     doc = nlp(text)
 
-    # person    = []
+    person    = []
     email     = []
     phone     = []
     skill     = []
@@ -86,6 +94,8 @@ def readPDF(path):
     organization = []
 
     for ent in doc.ents:
+        if ent.label_ == 'PERSON':
+            person.append(ent.text)
         if ent.label_ == 'PHONE':
             phone.append(ent.text)
         if ent.label_ == 'EMAIL':
@@ -97,17 +107,19 @@ def readPDF(path):
         if ent.label_ == 'ORG':
             organization.append(ent.text)
     
-    phone     = list(set(phone))
+    person    = list(set(person))
+    phone     = list(set(phone)) 
     email     = list(set(email))   
     skill     = list(set(skill))
     education = list(set(education))
     organization = list(set(organization))
     
-    info = {'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
+    info = {'person': person,'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
     
     # Determine the maximum length
-    max_length = max(len(phone), len(email), len(skill), len(education), len(organization))
+    max_length = max(len(person),len(phone), len(email), len(skill), len(education), len(organization))
     
+    person_df = []
     phone_df = []
     email_df = []
     skill_df = []
@@ -115,13 +127,14 @@ def readPDF(path):
     organization_df = []
 
     # Pad the lists with None to the maximum length
+    person_df       = person + [""] * (max_length - len(person))
     phone_df        = phone + [""] * (max_length - len(phone))
     email_df        = email + [""] * (max_length - len(email))
     skill_df        = skill + [""] * (max_length - len(skill))
     education_df    = education + [""] * (max_length - len(education))
     organization_df = organization + [""] * (max_length - len(organization))
     
-    info_pd = {'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': organization_df}
+    info_pd = {'person': person_df,'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': organization_df}
     df = pd.DataFrame(info_pd)
     
     # Save DataFrame to CSV

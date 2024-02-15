@@ -18,15 +18,19 @@ Users will upload their resume in PDF format, and the system will output the con
 I extend the resume parser code based on the spaCy class using the Resume Parsing.ipynb.  
 Implement additional features or improvements inspired by spaCy’s capabilities in natural language
 processing:
-- Extract Name
-- Extract Email with R
+- Extract Person
+- Extract Email
 - Extract Phone Number
-- 
+- Extract Education
+- Extract Skills
+- Extract Organization
 
 ## Task 2: Resume Parsing Features - Web Application Development
 I develop a simple web application that showcases the capabilities of extraction. 
-
-<image>
+![Alt Text](./app/image/ui1.png)  
 1. User can upload a PDF.  
-2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded file.
-3. The system will support to download the csv file version for each data.
+![Alt Text](./app/image/ui2.png)  
+2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded file.  
+![Alt Text](./app/image/ui3.png)  
+3. The system will support to download the csv file version including the extracted information provided from the system.  
+![Alt Text](./app/image/ui4.png)  

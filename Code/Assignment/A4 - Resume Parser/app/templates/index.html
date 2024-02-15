@@ -112,6 +112,9 @@
         {% if resume_info %}
             <h2>Resume Information:</h2>
             <ul>
+                {% if resume_info['person'] %}
+                    <li><strong>Person:</strong> {{ ', '.join(resume_info['person']) }}</li>
+                {% endif %}
                 {% if resume_info['phone'] %}
                     <li><strong>Phone:</strong> {{ ', '.join(resume_info['phone']) }}</li>
                 {% endif %}
