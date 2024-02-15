@@ -1,0 +1,11 @@
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certificate"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certified"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certify"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certified in"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification in"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of completion"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of achievement"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of excellence"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of recognition"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of participation"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}

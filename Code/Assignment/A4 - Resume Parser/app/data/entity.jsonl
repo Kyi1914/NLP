@@ -10,7 +10,6 @@
 {"label": "SKILL", "pattern": "soaps"}
 {"label": "SKILL", "pattern": "erdf"}
 {"label": "SKILL", "pattern": "3d simulation"}
-{"label": "SKILL", "pattern": "中級"}
 {"label": "SKILL", "pattern": "server side"}
 {"label": "SKILL", "pattern": "filemaker server"}
 {"label": "SKILL", "pattern": "model development"}
@@ -326,7 +325,6 @@
 {"label": "SKILL", "pattern": "gps devices"}
 {"label": "SKILL", "pattern": "nmls licensed"}
 {"label": "SKILL", "pattern": "home visits"}
-{"label": "SKILL", "pattern": "a2"}
 {"label": "SKILL", "pattern": "financial systems implementation"}
 {"label": "SKILL", "pattern": "kendo"}
 {"label": "SKILL", "pattern": "yellow pages"}
@@ -391,7 +389,6 @@
 {"label": "SKILL", "pattern": "event based marketing"}
 {"label": "SKILL", "pattern": "global business planning"}
 {"label": "SKILL", "pattern": "remote computing"}
-{"label": "SKILL", "pattern": "do not use 2016"}
 {"label": "SKILL", "pattern": "interest rate derivatives"}
 {"label": "SKILL", "pattern": "environment of care"}
 {"label": "SKILL", "pattern": "gifting strategies"}
@@ -652,7 +649,6 @@
 {"label": "SKILL", "pattern": "machinery repair"}
 {"label": "SKILL", "pattern": "geometric modeling"}
 {"label": "SKILL", "pattern": "hoshin"}
-{"label": "SKILL", "pattern": "look books"}
 {"label": "SKILL", "pattern": "cincom"}
 {"label": "SKILL", "pattern": "enaml"}
 {"label": "SKILL", "pattern": "auditory processing"}
@@ -704,7 +700,6 @@
 {"label": "SKILL", "pattern": "pediatric neurology"}
 {"label": "SKILL", "pattern": "community management"}
 {"label": "SKILL", "pattern": "eras"}
-{"label": "SKILL", "pattern": "1.1.2"}
 {"label": "SKILL", "pattern": "retreat leader"}
 {"label": "SKILL", "pattern": "large scale system integration"}
 {"label": "SKILL", "pattern": "distributed simulation"}
@@ -713,9 +708,7 @@
 {"label": "SKILL", "pattern": "contingent workforce"}
 {"label": "SKILL", "pattern": "spring integration"}
 {"label": "SKILL", "pattern": "pdma"}
-{"label": "SKILL", "pattern": "p"}
 {"label": "SKILL", "pattern": "logical volume manager (lvm)"}
-{"label": "SKILL", "pattern": "esri"}
 {"label": "SKILL", "pattern": "property disposition"}
 {"label": "SKILL", "pattern": "operational oversight"}
 {"label": "SKILL", "pattern": "flow visualization"}
@@ -753,10 +746,8 @@
 {"label": "SKILL", "pattern": "social games"}
 {"label": "SKILL", "pattern": "compositing"}
 {"label": "SKILL", "pattern": "transgenics"}
-{"label": "SKILL", "pattern": "db4o"}
 {"label": "SKILL", "pattern": "fluid-structure interaction"}
 {"label": "SKILL", "pattern": "extrusion"}
-{"label": "SKILL", "pattern": "top 40"}
 {"label": "SKILL", "pattern": "windows sharepoint services"}
 {"label": "SKILL", "pattern": "wetlands"}
 {"label": "SKILL", "pattern": "stepper"}
@@ -857,7 +848,6 @@
 {"label": "SKILL", "pattern": "ceo/cfo certification"}
 {"label": "SKILL", "pattern": "price quotes"}
 {"label": "SKILL", "pattern": "muscle pain"}
-{"label": "SKILL", "pattern": "3d/cad/アニメーション"}
 {"label": "SKILL", "pattern": "shockwave"}
 {"label": "SKILL", "pattern": "sid"}
 {"label": "SKILL", "pattern": "zebrafish"}
@@ -865,7 +855,6 @@
 {"label": "SKILL", "pattern": "psychopathology"}
 {"label": "SKILL", "pattern": "sleep disorders"}
 {"label": "SKILL", "pattern": "plant identification"}
-{"label": "SKILL", "pattern": "x3"}
 {"label": "SKILL", "pattern": "film"}
 {"label": "SKILL", "pattern": "animal training"}
 {"label": "SKILL", "pattern": "application configuration"}
@@ -873,7 +862,6 @@
 {"label": "SKILL", "pattern": "appropriate assessment"}
 {"label": "SKILL", "pattern": "luxembourg"}
 {"label": "SKILL", "pattern": "fleet"}
-{"label": "SKILL", "pattern": "初中級"}
 {"label": "SKILL", "pattern": "self-care"}
 {"label": "SKILL", "pattern": "test metrics"}
 {"label": "SKILL", "pattern": "jbpm"}
@@ -884,7 +872,6 @@
 {"label": "SKILL", "pattern": "serverpress"}
 {"label": "SKILL", "pattern": "office cleaning"}
 {"label": "SKILL", "pattern": "indian gaming"}
-{"label": "SKILL", "pattern": "6.6.1"}
 {"label": "SKILL", "pattern": "art nouveau"}
 {"label": "SKILL", "pattern": "sox 404"}
 {"label": "SKILL", "pattern": "api"}
@@ -964,10 +951,8 @@
 {"label": "SKILL", "pattern": "linux architecture"}
 {"label": "SKILL", "pattern": "insite"}
 {"label": "SKILL", "pattern": "account representation"}
-{"label": "SKILL", "pattern": "c"}
 {"label": "SKILL", "pattern": "hst"}
 {"label": "SKILL", "pattern": "mailchimp"}
-{"label": "SKILL", "pattern": "203k"}
 {"label": "SKILL", "pattern": "ecapture"}
 {"label": "SKILL", "pattern": "project plans"}
 {"label": "SKILL", "pattern": "abuse prevention"}
@@ -978,7 +963,6 @@
 {"label": "SKILL", "pattern": "secure network architecture"}
 {"label": "SKILL", "pattern": "hdi"}
 {"label": "SKILL", "pattern": "radio frequency (rf)"}
-{"label": "SKILL", "pattern": "20/20 technologies"}
 {"label": "SKILL", "pattern": "hearing aids"}
 {"label": "SKILL", "pattern": "dividends"}
 {"label": "SKILL", "pattern": "neuropsychological assessment"}
@@ -1057,8 +1041,6 @@
 {"label": "SKILL", "pattern": "indian head massage"}
 {"label": "SKILL", "pattern": "polyurethane"}
 {"label": "SKILL", "pattern": "geojson"}
-{"label": "SKILL", "pattern": "1.4.2"}
-{"label": "SKILL", "pattern": "cots"}
 {"label": "SKILL", "pattern": "cellular assays"}
 {"label": "SKILL", "pattern": "condensation"}
 {"label": "SKILL", "pattern": "eldo"}
@@ -1413,7 +1395,6 @@
 {"label": "SKILL", "pattern": "modern trade"}
 {"label": "SKILL", "pattern": "as-built documentation"}
 {"label": "SKILL", "pattern": "remote diagnostics"}
-{"label": "SKILL", "pattern": "2008"}
 {"label": "SKILL", "pattern": "lunch & learns"}
 {"label": "SKILL", "pattern": "sql azure"}
 {"label": "SKILL", "pattern": "grant coordination"}
@@ -1679,7 +1660,6 @@
 {"label": "SKILL", "pattern": "qrm"}
 {"label": "SKILL", "pattern": "finite element analysis"}
 {"label": "SKILL", "pattern": "iiba"}
-{"label": "SKILL", "pattern": "2.44"}
 {"label": "SKILL", "pattern": "documaker"}
 {"label": "SKILL", "pattern": "green engineering"}
 {"label": "SKILL", "pattern": "hunting land"}
@@ -1785,7 +1765,6 @@
 {"label": "SKILL", "pattern": "in-game advertising"}
 {"label": "SKILL", "pattern": "italian literature"}
 {"label": "SKILL", "pattern": "moisture control"}
-{"label": "SKILL", "pattern": "220-802"}
 {"label": "SKILL", "pattern": "2d art"}
 {"label": "SKILL", "pattern": "magnetics"}
 {"label": "SKILL", "pattern": "trustee"}
@@ -2205,7 +2184,6 @@
 {"label": "SKILL", "pattern": "music pedagogy"}
 {"label": "SKILL", "pattern": "ddi"}
 {"label": "SKILL", "pattern": "ieee 802.11"}
-{"label": "SKILL", "pattern": "12.04"}
 {"label": "SKILL", "pattern": "pic assembly"}
 {"label": "SKILL", "pattern": "comos"}
 {"label": "SKILL", "pattern": "luxury homes"}
@@ -2599,8 +2577,6 @@
 {"label": "SKILL", "pattern": "pilates"}
 {"label": "SKILL", "pattern": "orchestral music"}
 {"label": "SKILL", "pattern": "online advertising"}
-{"label": "SKILL", "pattern": "eos"}
-{"label": "SKILL", "pattern": "220-901"}
 {"label": "SKILL", "pattern": "propresenter"}
 {"label": "SKILL", "pattern": "pasw"}
 {"label": "SKILL", "pattern": "papervision 3d"}
@@ -2744,7 +2720,6 @@
 {"label": "SKILL", "pattern": "scratching"}
 {"label": "SKILL", "pattern": "product complaints"}
 {"label": "SKILL", "pattern": "vcr.py"}
-{"label": "SKILL", "pattern": "4.x"}
 {"label": "SKILL", "pattern": "quantification"}
 {"label": "SKILL", "pattern": "cswa"}
 {"label": "SKILL", "pattern": "team involvement"}
@@ -2825,7 +2800,6 @@
 {"label": "SKILL", "pattern": "i18n"}
 {"label": "SKILL", "pattern": "x4"}
 {"label": "SKILL", "pattern": "nhs"}
-{"label": "SKILL", "pattern": "form"}
 {"label": "SKILL", "pattern": "r13"}
 {"label": "SKILL", "pattern": "mounting"}
 {"label": "SKILL", "pattern": "software testing life cycle (stlc)"}
@@ -3151,7 +3125,6 @@
 {"label": "SKILL", "pattern": "environmental management systems"}
 {"label": "SKILL", "pattern": "managing partner relationships"}
 {"label": "SKILL", "pattern": "imagex"}
-{"label": "SKILL", "pattern": "part 820"}
 {"label": "SKILL", "pattern": "warm calling"}
 {"label": "SKILL", "pattern": "security studies"}
 {"label": "SKILL", "pattern": "school systems"}
@@ -3852,7 +3825,6 @@
 {"label": "SKILL", "pattern": "spring framework"}
 {"label": "SKILL", "pattern": "shavlik"}
 {"label": "SKILL", "pattern": "hp products"}
-{"label": "SKILL", "pattern": "20"}
 {"label": "SKILL", "pattern": "printer support"}
 {"label": "SKILL", "pattern": "anaphylaxis"}
 {"label": "SKILL", "pattern": "organizational effectiveness"}
@@ -4319,7 +4291,6 @@
 {"label": "SKILL", "pattern": "benefits administration"}
 {"label": "SKILL", "pattern": "mask"}
 {"label": "SKILL", "pattern": "graphics layout"}
-{"label": "SKILL", "pattern": "0.14.3"}
 {"label": "SKILL", "pattern": "celsys"}
 {"label": "SKILL", "pattern": "misys"}
 {"label": "SKILL", "pattern": "new business opportunities"}
@@ -4587,7 +4558,6 @@
 {"label": "SKILL", "pattern": "business documentation"}
 {"label": "SKILL", "pattern": "viral marketing"}
 {"label": "SKILL", "pattern": "hospital pharmacy"}
-{"label": "SKILL", "pattern": "2014"}
 {"label": "SKILL", "pattern": "phytochemistry"}
 {"label": "SKILL", "pattern": "wireshark"}
 {"label": "SKILL", "pattern": "process identification"}
@@ -4598,7 +4568,6 @@
 {"label": "SKILL", "pattern": "windpro"}
 {"label": "SKILL", "pattern": "secured financing"}
 {"label": "SKILL", "pattern": "software para recursos humanos"}
-{"label": "SKILL", "pattern": "画像編集"}
 {"label": "SKILL", "pattern": "ida"}
 {"label": "SKILL", "pattern": "organic geochemistry"}
 {"label": "SKILL", "pattern": "hydropower"}
@@ -4734,7 +4703,6 @@
 {"label": "SKILL", "pattern": "network connectivity"}
 {"label": "SKILL", "pattern": "product modelling"}
 {"label": "SKILL", "pattern": "knowledge engineering"}
-{"label": "SKILL", "pattern": "4.8"}
 {"label": "SKILL", "pattern": "cpsr"}
 {"label": "SKILL", "pattern": "line of business"}
 {"label": "SKILL", "pattern": "olm"}
@@ -4974,7 +4942,6 @@
 {"label": "SKILL", "pattern": "tactical operations"}
 {"label": "SKILL", "pattern": "certified protection officer"}
 {"label": "SKILL", "pattern": "voluptuous"}
-{"label": "SKILL", "pattern": "4.7.5"}
 {"label": "SKILL", "pattern": "carriage of goods by sea"}
 {"label": "SKILL", "pattern": "small animal models"}
 {"label": "SKILL", "pattern": "caniusepython3"}
@@ -4987,7 +4954,6 @@
 {"label": "SKILL", "pattern": "quickbooks for mac"}
 {"label": "SKILL", "pattern": "water damage restoration"}
 {"label": "SKILL", "pattern": "marketvision"}
-{"label": "SKILL", "pattern": "3.0.4"}
 {"label": "SKILL", "pattern": "project bidding"}
 {"label": "SKILL", "pattern": "digital applications"}
 {"label": "SKILL", "pattern": "notizverwaltung"}
@@ -5075,7 +5041,6 @@
 {"label": "SKILL", "pattern": "r16"}
 {"label": "SKILL", "pattern": "intuit proseries"}
 {"label": "SKILL", "pattern": "reproduction"}
-{"label": "SKILL", "pattern": ".com"}
 {"label": "SKILL", "pattern": "calhfa"}
 {"label": "SKILL", "pattern": "content partnerships"}
 {"label": "SKILL", "pattern": "ufc"}
@@ -6814,8 +6779,6 @@
 {"label": "SKILL", "pattern": "mosfet"}
 {"label": "SKILL", "pattern": "provincial offences"}
 {"label": "SKILL", "pattern": "supportworks"}
-{"label": "SKILL", "pattern": "cdbg"}
-{"label": "SKILL", "pattern": "citizenship"}
 {"label": "SKILL", "pattern": "eurobonds"}
 {"label": "SKILL", "pattern": "renewals"}
 {"label": "SKILL", "pattern": "grp"}
@@ -7621,7 +7584,6 @@
 {"label": "SKILL", "pattern": "project documentation"}
 {"label": "SKILL", "pattern": "children's programming"}
 {"label": "SKILL", "pattern": "small business financial management"}
-{"label": "SKILL", "pattern": "com"}
 {"label": "SKILL", "pattern": "environmental journalism"}
 {"label": "SKILL", "pattern": "mortgage"}
 {"label": "SKILL", "pattern": "history of technology"}
@@ -7997,7 +7959,6 @@
 {"label": "SKILL", "pattern": "z80"}
 {"label": "SKILL", "pattern": "mix engineering"}
 {"label": "SKILL", "pattern": "trailer"}
-{"label": "SKILL", "pattern": "2015"}
 {"label": "SKILL", "pattern": "integrated design"}
 {"label": "SKILL", "pattern": "new media initiatives"}
 {"label": "SKILL", "pattern": "seo audits"}
@@ -8179,7 +8140,6 @@
 {"label": "SKILL", "pattern": "personal income tax returns"}
 {"label": "SKILL", "pattern": "environmental projects"}
 {"label": "SKILL", "pattern": "executive level management"}
-{"label": "SKILL", "pattern": "2016"}
 {"label": "SKILL", "pattern": "video codec"}
 {"label": "SKILL", "pattern": "hazelcast"}
 {"label": "SKILL", "pattern": "vantive"}
@@ -8691,7 +8651,6 @@
 {"label": "SKILL", "pattern": "engineering geology"}
 {"label": "SKILL", "pattern": "legacy series"}
 {"label": "SKILL", "pattern": "apache zookeeper"}
-{"label": "SKILL", "pattern": "2012"}
 {"label": "SKILL", "pattern": "engineering change management"}
 {"label": "SKILL", "pattern": "web of science"}
 {"label": "SKILL", "pattern": "agency agreements"}
@@ -8962,13 +8921,11 @@
 {"label": "SKILL", "pattern": "soft landscaping"}
 {"label": "SKILL", "pattern": "django-allauth"}
 {"label": "SKILL", "pattern": "debt & equity capital raising"}
-{"label": "SKILL", "pattern": "24"}
 {"label": "SKILL", "pattern": "witchcraft"}
 {"label": "SKILL", "pattern": "hpp"}
 {"label": "SKILL", "pattern": "public libraries"}
 {"label": "SKILL", "pattern": "high energy physics"}
 {"label": "SKILL", "pattern": "obedient"}
-{"label": "SKILL", "pattern": "3.7"}
 {"label": "SKILL", "pattern": "solvency"}
 {"label": "SKILL", "pattern": "direct mail pieces"}
 {"label": "SKILL", "pattern": "ion channels"}
@@ -8993,11 +8950,9 @@
 {"label": "SKILL", "pattern": "process improvement"}
 {"label": "SKILL", "pattern": "google webmaster tools"}
 {"label": "SKILL", "pattern": "oracle fusion middleware"}
-{"label": "SKILL", "pattern": "2003"}
 {"label": "SKILL", "pattern": "passport"}
 {"label": "SKILL", "pattern": "skype empresarial"}
 {"label": "SKILL", "pattern": "long hair"}
-{"label": "SKILL", "pattern": "mom 2005"}
 {"label": "SKILL", "pattern": "transportation management"}
 {"label": "SKILL", "pattern": "physics"}
 {"label": "SKILL", "pattern": "exhibit preparation"}
@@ -9686,7 +9641,6 @@
 {"label": "SKILL", "pattern": "service standards"}
 {"label": "SKILL", "pattern": "audio post production"}
 {"label": "SKILL", "pattern": "rotator cuff injuries"}
-{"label": "SKILL", "pattern": "2012-01-25b"}
 {"label": "SKILL", "pattern": "communication development"}
 {"label": "SKILL", "pattern": "features"}
 {"label": "SKILL", "pattern": "golf"}
@@ -10963,9 +10917,6 @@
 {"label": "SKILL", "pattern": "fluorescence"}
 {"label": "SKILL", "pattern": "html5"}
 {"label": "SKILL", "pattern": "perm placement"}
-{"label": "SKILL", "pattern": "2013"}
-{"label": "SKILL", "pattern": "2.0.5"}
-{"label": "SKILL", "pattern": "doc1"}
 {"label": "SKILL", "pattern": "curriculum mapping"}
 {"label": "SKILL", "pattern": "opportunity assessment"}
 {"label": "SKILL", "pattern": "managing associates"}
@@ -13969,7 +13920,6 @@
 {"label": "SKILL", "pattern": "higher education marketing"}
 {"label": "SKILL", "pattern": "ibm power"}
 {"label": "SKILL", "pattern": "nuclear licensing"}
-{"label": "SKILL", "pattern": "2018"}
 {"label": "SKILL", "pattern": "vaastu"}
 {"label": "SKILL", "pattern": "data access object (dao)"}
 {"label": "SKILL", "pattern": "product catalog"}
@@ -15480,7 +15430,6 @@
 {"label": "SKILL", "pattern": "low energy design"}
 {"label": "SKILL", "pattern": "apple pages"}
 {"label": "SKILL", "pattern": "alliance creation"}
-{"label": "SKILL", "pattern": "birth"}
 {"label": "SKILL", "pattern": "reconciling reports"}
 {"label": "SKILL", "pattern": "trust services"}
 {"label": "SKILL", "pattern": "passolo"}
@@ -16656,14 +16605,12 @@
 {"label": "SKILL", "pattern": "forex-python"}
 {"label": "SKILL", "pattern": "qualification testing"}
 {"label": "SKILL", "pattern": "ms reporting services"}
-{"label": "SKILL", "pattern": "sbir"}
 {"label": "SKILL", "pattern": "wet chemical etching"}
 {"label": "SKILL", "pattern": "strategic modeling"}
 {"label": "SKILL", "pattern": "youth activism"}
 {"label": "SKILL", "pattern": "forensic psychiatry"}
 {"label": "SKILL", "pattern": "wfc"}
 {"label": "SKILL", "pattern": "business statistics"}
-{"label": "SKILL", "pattern": "2015a"}
 {"label": "SKILL", "pattern": "emcee"}
 {"label": "SKILL", "pattern": "aerospace engineering"}
 {"label": "SKILL", "pattern": "bibtex"}
@@ -16968,8 +16915,7 @@
 {"label": "SKILL", "pattern": "polymorph screening"}
 {"label": "SKILL", "pattern": "rsync"}
 {"label": "SKILL", "pattern": "brightcove"}
-{"label": "SKILL", "pattern": "h.263"}
-{"label": "SKILL", "pattern": "irix"}
+
 {"label": "SKILL", "pattern": "complexity reduction"}
 {"label": "SKILL", "pattern": "halloween costume"}
 {"label": "SKILL", "pattern": "record"}
@@ -27711,9 +27657,7 @@
 {"label": "SKILL", "pattern": "isrs"}
 {"label": "SKILL", "pattern": "history of philosophy"}
 {"label": "SKILL", "pattern": "messaging platforms"}
-{"label": "SKILL", "pattern": "is-100"}
 {"label": "SKILL", "pattern": "boxercise"}
-{"label": "SKILL", "pattern": "email"}
 {"label": "SKILL", "pattern": "mct"}
 {"label": "SKILL", "pattern": "udf"}
 {"label": "SKILL", "pattern": "social impact assessment"}
@@ -33223,7 +33167,6 @@
 {"label": "SKILL", "pattern": "client billing"}
 {"label": "SKILL", "pattern": "pa-dss"}
 {"label": "SKILL", "pattern": "sara title iii"}
-{"label": "SKILL", "pattern": "com+"}
 {"label": "SKILL", "pattern": "inserts"}
 {"label": "SKILL", "pattern": "asian art"}
 {"label": "SKILL", "pattern": "brianfevermedia"}
@@ -37430,7 +37373,6 @@
 {"label": "SKILL", "pattern": "psychographics"}
 {"label": "SKILL", "pattern": "kali linux"}
 {"label": "SKILL", "pattern": "geoip"}
-{"label": "SKILL", "pattern": "cc 2017"}
 {"label": "SKILL", "pattern": "instrumentation"}
 {"label": "SKILL", "pattern": "sun storedge"}
 {"label": "SKILL", "pattern": "editing software"}
@@ -37509,7 +37451,6 @@
 {"label": "SKILL", "pattern": "commercial property sales"}
 {"label": "SKILL", "pattern": "conveyor belts"}
 {"label": "SKILL", "pattern": "employee opinion surveys"}
-{"label": "SKILL", "pattern": "status"}
 {"label": "SKILL", "pattern": "micro insurance"}
 {"label": "SKILL", "pattern": "facility expansion"}
 {"label": "SKILL", "pattern": "capsule endoscopy"}
@@ -38587,3 +38528,48 @@
 {"label": "SKILL", "pattern": "adobe"}
 {"label": "SKILL", "pattern": "glucose meters"}
 {"label": "SKILL", "pattern": "oracle designer"}
+{"label":"EDUCATION","pattern":[{"TEXT":"post-doctoral"}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"post"}, {"IS_PUNCT": true}, {"TEXT":"doctoral"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "post-doc"}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"post"}, {"IS_PUNCT": true}, {"TEXT":"doc"}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"postdoctoral"}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"postdoc"}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"doctoral"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "phd"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ph.d."}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ph.d"}, {"IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"master"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "msc"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ms.c."}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ms.c"}, {"IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "mba"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "mba", "IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "m"}, {"IS_PUNCT": true}, {"TEXT": "b"}, {"IS_PUNCT": true}, {"TEXT": "a"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "m"}, {"IS_PUNCT": true}, {"TEXT": "b"}, {"IS_PUNCT": true}, {"TEXT": "a"}, {"IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT":"bachelor"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ba"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "b.a."}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "b.a"}, {"IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "bs"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "b.s."}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "b.s"}, {"IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "bachelor of science"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "bachelor of arts"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "undergraduate"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ug"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "ug.", "IS_PUNCT": true}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "diploma"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "high school"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "hs"}]}
+{"label":"EDUCATION","pattern":[{"TEXT": "hs.", "IS_PUNCT": true}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certificate"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certified"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certify"}, {"OP": "?"}, {"IS_PUNCT": true}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certified in"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification in"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of completion"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of achievement"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of excellence"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of recognition"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}
+{"label": "CERTIFICATES", "pattern": [{"TEXT": "certification of participation"}, {"OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"IS_ALPHA": true, "OP": "+"}]}

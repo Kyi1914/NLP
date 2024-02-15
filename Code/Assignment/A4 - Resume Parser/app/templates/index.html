@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resume Parsing Web App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: #ff0000;
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #286090;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Parsing Web App</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx">
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+
+        <!-- show the info values -->
+        {% if resume_info %}
+            <h2>Resume Information:</h2>
+            <ul>
+                {% if resume_info['phone'] %}
+                    <li><strong>Phone:</strong> {{ ', '.join(resume_info['phone']) }}</li>
+                {% endif %}
+                {% if resume_info['email'] %}
+                    <li><strong>Email:</strong> {{ ', '.join(resume_info['email']) }}</li>
+                {% endif %}
+                {% if resume_info['skills'] %}
+                    <li><strong>Skills:</strong> {{ ', '.join(resume_info['skills']) }}</li>
+                {% endif %}
+                {% if resume_info['education'] %}
+                    <li><strong>Education:</strong> {{ ', '.join(resume_info['education']) }}</li>
+                {% endif %}
+            </ul>
+
+            <!-- download button -->
+            <form action="/" method="post">
+                <input type="hidden" name="download" value="true">
+                <button type="submit">Download CSV</button>
+            </form>
+
+            <!-- download button -->
+            {% if csv_data %}
+                <a href="data:text/csv;charset=utf-8,{{ csv_data|urlencode }}" download="resume_info.csv">Download CSV</a>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
