@@ -103,20 +103,29 @@ def readPDF(path):
     education = list(set(education))
     organization = list(set(organization))
     
+    info = {'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
+    
     # Determine the maximum length
     max_length = max(len(phone), len(email), len(skill), len(education), len(organization))
+    
+    phone_df = []
+    email_df = []
+    skill_df = []
+    education_df = []
+    organization_df = []
 
     # Pad the lists with None to the maximum length
-    phone += [""] * (max_length - len(phone))
-    email += [""] * (max_length - len(email))
-    skill += [""] * (max_length - len(skill))
-    education += [""] * (max_length - len(education))
-    organization += [""] * (max_length - len(organization))
+    phone_df        = phone + [""] * (max_length - len(phone))
+    email_df        = email + [""] * (max_length - len(email))
+    skill_df        = skill + [""] * (max_length - len(skill))
+    education_df    = education + [""] * (max_length - len(education))
+    organization_df = organization + [""] * (max_length - len(organization))
+    # print(len(phone_df), len(email_df), len(skill_df), len(education_df), len(org_df))
     
-    
-    info = {'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
+    # info   = {'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': org_df}
     # df = pd.DataFrame.from_dict(info, orient='index') 
-    df = pd.DataFrame(info)
+    info_pd = {'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': organization_df}
+    df = pd.DataFrame(info_pd)
     # Save DataFrame to CSV
     csv_data = df.to_csv(index=False)
     
