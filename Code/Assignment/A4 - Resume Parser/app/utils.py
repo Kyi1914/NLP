@@ -120,12 +120,10 @@ def readPDF(path):
     skill_df        = skill + [""] * (max_length - len(skill))
     education_df    = education + [""] * (max_length - len(education))
     organization_df = organization + [""] * (max_length - len(organization))
-    # print(len(phone_df), len(email_df), len(skill_df), len(education_df), len(org_df))
     
-    # info   = {'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': org_df}
-    # df = pd.DataFrame.from_dict(info, orient='index') 
     info_pd = {'phone': phone_df, 'email': email_df, 'skills':skill_df,'education':education_df, 'organization': organization_df}
     df = pd.DataFrame(info_pd)
+    
     # Save DataFrame to CSV
     csv_data = df.to_csv(index=False)
     
