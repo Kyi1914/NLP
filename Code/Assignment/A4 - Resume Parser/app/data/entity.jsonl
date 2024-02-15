@@ -35543,7 +35543,6 @@
 {"label": "SKILL", "pattern": "modifiers"}
 {"label": "SKILL", "pattern": "banjo"}
 {"label": "SKILL", "pattern": "carbonless forms"}
-{"label": "SKILL", "pattern": "thin"}
 {"label": "SKILL", "pattern": "multi-platform"}
 {"label": "SKILL", "pattern": "phase contrast"}
 {"label": "SKILL", "pattern": "neurodevelopmental treatment"}
@@ -38528,6 +38527,7 @@
 {"label": "SKILL", "pattern": "adobe"}
 {"label": "SKILL", "pattern": "glucose meters"}
 {"label": "SKILL", "pattern": "oracle designer"}
+
 {"label":"EDUCATION","pattern":[{"TEXT":"post-doctoral"}]}
 {"label":"EDUCATION","pattern":[{"TEXT":"post"}, {"IS_PUNCT": true}, {"TEXT":"doctoral"}]}
 {"label":"EDUCATION","pattern":[{"TEXT": "post-doc"}]}

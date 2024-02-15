@@ -44,7 +44,7 @@ from spacy.lang.en.stop_words import STOP_WORDS
 def preprocessing(sentence):
     
     # remove hyperlink
-    sentence = remove_hyperlinks(sentence)
+    # sentence = remove_hyperlinks(sentence)
     
     stopwords    = list(STOP_WORDS)
     doc          = nlp(sentence)
@@ -97,16 +97,30 @@ def readPDF(path):
         if ent.label_ == 'ORG':
             organization.append(ent.text)
     
-    phone     = set(phone)  
-    email     = set(email)     
-    skill     = set(skill)
-    education = set(education)
-    organization = set(organization)
+    phone     = list(set(phone))
+    email     = list(set(email))   
+    skill     = list(set(skill))
+    education = list(set(education))
+    organization = list(set(organization))
+    
+    # Determine the maximum length
+    max_length = max(len(phone), len(email), len(skill), len(education), len(organization))
+
+    # Pad the lists with None to the maximum length
+    phone += [""] * (max_length - len(phone))
+    email += [""] * (max_length - len(email))
+    skill += [""] * (max_length - len(skill))
+    education += [""] * (max_length - len(education))
+    organization += [""] * (max_length - len(organization))
+    
     
     info = {'phone': phone, 'email': email, 'skills':skill,'education':education, 'organization': organization}
-    df = pd.DataFrame.from_dict(info, orient='index') # for dataframe
+    # df = pd.DataFrame.from_dict(info, orient='index') 
+    df = pd.DataFrame(info)
+    # Save DataFrame to CSV
+    csv_data = df.to_csv(index=False)
     
-    return info, df
+    return info, csv_data
 
 
 

@@ -124,6 +124,9 @@
                 {% if resume_info['education'] %}
                     <li><strong>Education:</strong> {{ ', '.join(resume_info['education']) }}</li>
                 {% endif %}
+                {% if resume_info['organization'] %}
+                    <li><strong>Organization:</strong> {{ ', '.join(resume_info['organization']) }}</li>
+                {% endif %}
             </ul>
 
             <!-- download button -->
