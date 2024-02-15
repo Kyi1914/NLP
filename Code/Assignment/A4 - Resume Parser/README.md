@@ -6,16 +6,8 @@ This is done by st124087 (Kyi Thin Nu)
 
 ## Section
 - [Overview of this assignment](#overview-of-this-assignment)
-- [ Task1: Get Language Pair ](#task-1-get-language-pair)
-    - [Dataset Information](#dataset-information)
-    - [Data Preprocessing](#data-preprocessing)
-    - [Task2: Experiment with Attention Mechanisms](#task-2-experiment-with-attention-mechanisms)
-    - [Task 3: Evaluation and Verification](#task-3-evaluation-and-verification)
-        - [Performance Comparison](#1-the-performance-comparison-between-the-attention-mechanisms)
-        - [Performance Plot](#32-performance-plot)
-        - [Attention Map](#33-attention-maps)
-        - [Analysis](#34-analysis-the-results-of-translating-between-english-and-myanmar-language)
-    - [Task 4: Web Application Development](#task-4-web-application-development)
+- [ Task1: Implementation Foundation ](#task-1-implementation-foundation)
+- [Task2: Resume Parsing Features - Web Application Development](#task-2-resume-parsing-features---web-application-development)
 
 ## Overview of this assignment
 
@@ -30,6 +22,6 @@ processing.
 I develop a simple web application that showcases the capabilities of extraction. 
 
 <image>
-1. User can upload a PDF.
-2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded
-3. 
+1. User can upload a PDF.  
+2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded file.
+3. The system will support to download the csv file version for each data.
