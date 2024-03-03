@@ -27,8 +27,9 @@ the dataset link: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-o
 ## Task 2: Sentence Embedding with Sentence BERT
 I implement pretrained BERT network that use siamese network structures to derive semantically meaningful sentence embeddings that can be compared using cosine-similarity.
 
-
 ## Task 3: Evaluation and Analysis
+
+The notebook "comparisonWithPretrain.ipynb" presents a comparative analysis between a scratch-trained model and pretrained models from Hugging Face. The objective is to evaluate performance, robustness, and training efficiency, providing insights into the strengths and weaknesses of each approach.
 
 I tested with the two sentences for the two model (scratch and pretrained).
 - sentence_a = 'Your contribution helped make it possible for us to provide our students with a quality education.'
