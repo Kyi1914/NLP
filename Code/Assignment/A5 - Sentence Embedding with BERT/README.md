@@ -6,8 +6,11 @@ This is done by st124087 (Kyi Thin Nu)
 
 ## Section
 - [Overview of this assignment](#overview-of-this-assignment)
-- [ Task1: Implementation Foundation ](#task-1-implementation-foundation)
-- [Task2: Resume Parsing Features - Web Application Development](#task-2-resume-parsing-features---web-application-development)
+- [ Task1: Training BERT from Scratch with Sentence Transformer ](#task-1-training-bert-from-scratch-with-sentence-transformer)
+- [ Task2: Sentence Embedding with Sentence BERT](#task-2-sentence-embedding-with-sentence-bert)
+- [ Task3: Evaluation and Analysis](#task-3-evaluation-and-analysis)
+- [ Task4: Text similarity - Web Application Development](#task-4-text-similarity---web-application-development)
+- [Testing Purpose](#testing)
 
 ## Overview of this assignment
 
@@ -26,38 +29,67 @@ I implement pretrained BERT network that use siamese network structures to deriv
 
 
 ## Task 3: Evaluation and Analysis
-- (1)
-my model
 
-- (2)
-compare to others models
+I tested with the two sentences for the two model (scratch and pretrained).
+- sentence_a = 'Your contribution helped make it possible for us to provide our students with a quality education.'
+- sentence_b = "Your contributions were of no help with our students' education."
 
-- (3)
-why my model is bad
-because 
+<table>
+    <tr>
+        <th>Model</th>
+        <th>Cosine Similarity Score</th>
+    </tr>
+    <tr>
+        <th>S BERT (pretrained) </td>
+        <td> 0.38588038 </td>
+    </tr>
+    <tr>
+        <th>S BERT (scratch) </td>
+        <td> 0.9748 </td>
+    </tr>
+    <tr></tr>
+</table> 
 
-how should I improve the model
-more epoch, more hyperparmeter tuning, train with larger dataset
+My model's suboptimal performance can be attributed to several factors, including a limited dataset, minimal epochs, and constraints on hyperparameters during training. This report outlines the identified issues and proposes specific strategies for enhancing the model's effectiveness.
+
+<h4> Issues Identified: </h4>
+
+- Limited Dataset: The model was trained on a dataset of insufficient size, limiting its exposure to diverse patterns and scenarios.
+
+- Minimal Epochs: Insufficient training epochs hindered the model's ability to converge and capture intricate relationships within the data.
+
+- Limited Hyperparameter Tuning: The hyperparameters were not extensively tuned, preventing the model from reaching its optimal configuration.
+
+<h4> Recommendations for Improvement: </h4>
+
+- Increase Epochs:
+
+    -   Gradually increase the number of training epochs to allow the model to capture more nuanced patterns.
+    - Monitor performance metrics to identify the point of diminishing returns and avoid overfitting. 
+
+- Hyperparameter Tuning:
+
+    - Conduct a thorough exploration of hyperparameter configurations.
+    - Utilize techniques like grid search or random search to identify optimal hyperparameter values.
+    - Focus on parameters such as learning rates, batch sizes, and regularization terms.
+
+- Train with Larger Dataset:
+
+    - Expand the training dataset to provide the model with a more diverse set of examples.
+    - A larger dataset enhances the model's ability to generalize and improves performance on real-world data.
+
 
 ## Task 4: Text similarity - Web Application Development
 I develop a simple web application to demonstrate text similarity using a text-embedding model. 
 Developing web application includes backend development, model integration, and frontend development. For creating such an application I use Flask for the backend and basic HTML/JavaScript for the frontend.
 
-This HTML file will contain a simple form for inputting two sentences and a button to submit them.
+The HTML file will contain a simple form for inputting two sentences and a button to submit them.
 
+When the submit, cosine similarity of the two sentences is calculated and show the result.
 
-![Alt Text](./app/image/ui1.png)  
+## Testing Purpose
 
-1. User can upload a PDF.  
+Please run the app.py to start the web application.
 
-![Alt Text](./app/image/ui2.png)  
-
-
-2. Then system will extract the information including contact, skills, education and worked organization from the user uploaded file.  
-
-![Alt Text](./app/image/ui3.png)  
-
-
-3. The system will support to download the csv file version including the extracted information provided from the system.  
-
-![Alt Text](./app/image/ui4.png) 
+## Contributors
+Special thanks to Ma Wut Yee Aung, Minn Banya and Rakshya for helping me with this assignment.
