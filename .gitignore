@@ -13,3 +13,6 @@ Code/quiz1-classification-cnn-lstm/.vector_cache/wiki.simple.vec
 Code/Assignment/A5 - Sentence Embedding with BERT/app/models/BERT.pt
 Code/Assignment/A5 - Sentence Embedding with BERT/app/models/S_BERT.pt
 Code/Assignment/A5 - Sentence Embedding with BERT/app/models/data.pkl
+Code/Assignment/A5 - Sentence Embedding with BERT/modelTes/BERT.pt
+Code/Assignment/A5 - Sentence Embedding with BERT/modelTes/S_BERT.pt
+Code/Assignment/A5 - Sentence Embedding with BERT/modelTes/data.pkl

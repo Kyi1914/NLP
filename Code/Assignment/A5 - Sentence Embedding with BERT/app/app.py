@@ -4,15 +4,16 @@ import pandas as pd
 from io import StringIO
 import pickle
 import torch
-import os
-import sys
+
 from mutils import *
 
 # Flask app
 app = Flask(__name__)
 
 # data     = pickle.load(open('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A5 - Sentence Embedding with BERT/app/models/data.pkl','rb'))
-data     = pickle.load(open('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A5 - Sentence Embedding with BERT/app/models/data.pkl','rb'))
+# data     = pickle.load(open('./models/data.pkl','rb'))
+data = pickle.load(open('/Users/kyithinnu/GitHub/NLP/Code/Assignment/A5 - Sentence Embedding with BERT/modelTes/data.pkl','rb'))
+
 print(data)
 word2id  = data['word2id']
 print(word2id)
@@ -23,7 +24,6 @@ tokenizer = SimpleTokenizer(word2id)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# save_path = f'./models/S_BERT.pt'
 model = BERT()
 
 # model.load_state_dict(torch.load('app/models/S_BERT.pt', map_location = device))

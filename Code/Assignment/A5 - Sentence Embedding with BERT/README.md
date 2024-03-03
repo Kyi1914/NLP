@@ -26,6 +26,18 @@ I implement pretrained BERT network that use siamese network structures to deriv
 
 
 ## Task 3: Evaluation and Analysis
+- (1)
+my model
+
+- (2)
+compare to others models
+
+- (3)
+why my model is bad
+because 
+
+how should I improve the model
+more epoch, more hyperparmeter tuning, train with larger dataset
 
 ## Task 4: Text similarity - Web Application Development
 I develop a simple web application to demonstrate text similarity using a text-embedding model. 

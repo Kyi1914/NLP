@@ -210,7 +210,7 @@ def configurations(u,v):
     return x
 
 def cosine_similarity(u, v):
-    dot_product = np.dot(u, v)
+    dot_product = np.dot(u, v.T)
     norm_u = np.linalg.norm(u)
     norm_v = np.linalg.norm(v)
     similarity = dot_product / (norm_u * norm_v)
