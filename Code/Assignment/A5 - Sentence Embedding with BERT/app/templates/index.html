@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Similarity Checker</title>
+</head>
+<body>
+    <h1>Check Text Similarity</h1>
+    <form action="/" method="post">
+        Sentence 1:<br>
+        <input type="text" name="sentence1"><br>
+        Sentence 2:<br>
+        <input type="text" name="sentence2"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% if result %}
+        <h2>Similarity Score: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
