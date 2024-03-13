@@ -6,8 +6,8 @@ This is done by st124087 (Kyi Thin Nu)
 
 ## Section
 - [Overview of this assignment](#overview-of-this-assignment)
-- [ Task1:  Student Layer Initialization ](#)
-- [ Task2: Evaluation and Analysis](#)
+- [ Task1:  Student Layer Initialization ](#task-1-training-bert-from-scratch-with-sentence-transformer)
+- [ Task2: Evaluation and Analysis](#task-2-sentence-embedding-with-sentence-bert)
 
 ## Overview of this assignment
 
